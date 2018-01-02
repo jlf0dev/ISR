@@ -1,0 +1,41 @@
+/* Navbar links padding */
+.nav-item {
+	padding-left: .7rem;
+	padding-right: .7rem;
+}
+/* Parallax jumbotron style */
+.parallax {
+	height: 100vh;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 50% 50%;
+	margin-bottom: 0;
+}
+
+/* Remove border of list-group */
+.list-group-item {
+	border: none;
+}
+
+/* Radio image */
+.product-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Natural disaster tabs */
+.nd-link.nd-active {
+	background-color: #5cb85c; 
+	color: white;
+}
+
+.nd-tab {
+	display: none;
+}
+.nd-tab.nd-active {
+	display: block;
+}
+
+footer {
+	font-size: .7rem;
+}
