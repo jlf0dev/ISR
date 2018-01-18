@@ -1,15 +1,83 @@
-/* Navbar links padding */
-.nav-item {
-	padding-left: .7rem;
-	padding-right: .7rem;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* General CSS */
+body {
+	background-color: #343A40;
+	font-family: 'Montserrat';
+	color: #fff;
 }
-/* Parallax jumbotron style */
-.parallax {
+button {
+	cursor: pointer;
+}
+
+/* Wrapper for nav and banner */
+.landing-wrapper {
 	height: 100vh;
-	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+	border-bottom: 1px solid #fff;
+}
+
+.navbar-brand {
+	color:#fff;
+}
+
+.navbar-brand:hover {
+	color:#fff;
+}
+
+.nav-item {
+	padding: .6rem;
+}
+
+.nav-link {
+	color: rgba(255, 255, 255, .8);
+	letter-spacing: 2px;
+	font-size: 13px;
+}
+
+.nav-link:hover {
+	color: #fff;
+}
+
+.active {
+	border-bottom: 1px solid #fff;
+}
+
+
+/* Banner */
+.banner {
+	flex-grow:1;
+	/* background-attachment: fixed; */
+	background-image: url('../img/kalen-emsley-98264_gradient.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
 	margin-bottom: 0;
+	padding:0;
+	display: flex;
+	align-items: stretch;
+}
+
+.banner .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.arrow-image {
+	width: 32px;
+}
+
+#title {
+	font-family: 'Montserrat';
+	font-size: 68px;
+	text-transform: uppercase;
 }
 
 /* Remove border of list-group */

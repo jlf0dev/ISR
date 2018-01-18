@@ -10,7 +10,7 @@ $( document ).ready(function() {
     // Learn more button
     $('.learn').on('click', function(e) {
         $('html, body').animate({
-            scrollTop: $("#content").offset().top - $('.navbar').height()},
+            scrollTop: $("#content").offset().top},
             1400,
             "swing"
         );
