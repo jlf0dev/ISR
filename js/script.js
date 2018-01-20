@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     // Contact us scroll button
-    $('.contact').on('click', function(e) {
+    $('#contact').on('click', function(e) {
         $('html, body').animate({
             scrollTop: $(document).height()-$(window).height()},
             1400,
