@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     // Contact us scroll button
-    $('.contact').on('click', function(e) {
+    $('#contact').on('click', function(e) {
         $('html, body').animate({
             scrollTop: $(document).height()-$(window).height()},
             1400,
@@ -10,7 +10,7 @@ $( document ).ready(function() {
     // Learn more button
     $('.learn').on('click', function(e) {
         $('html, body').animate({
-            scrollTop: $("#content").offset().top},
+            scrollTop: $("#content").offset().top - $('.navbar').height()},
             1400,
             "swing"
         );

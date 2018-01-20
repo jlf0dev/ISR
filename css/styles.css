@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 
 /* General CSS */
 body {
-	background-color: #343A40;
-	font-family: 'Montserrat';
-	color: #fff;
+	font-family: 'Open Sans';
 }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat';
+}
+
 button {
 	cursor: pointer;
 }
+
 
 /* Wrapper for nav and banner */
 .landing-wrapper {
@@ -40,6 +44,7 @@ button {
 	color: rgba(255, 255, 255, .8);
 	letter-spacing: 2px;
 	font-size: 13px;
+	text-transform: uppercase;
 }
 
 .nav-link:hover {
@@ -54,7 +59,7 @@ button {
 /* Banner */
 .banner {
 	flex-grow:1;
-	/* background-attachment: fixed; */
+	background-attachment: fixed;
 	background-image: url('../img/kalen-emsley-98264_gradient.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
@@ -70,15 +75,17 @@ button {
 	justify-content: flex-end;
 }
 
+#title {
+	font-family: 'Montserrat';
+	color: #fff;
+	font-size: 68px;
+	text-transform: uppercase;
+}
+
 .arrow-image {
 	width: 32px;
 }
 
-#title {
-	font-family: 'Montserrat';
-	font-size: 68px;
-	text-transform: uppercase;
-}
 
 /* Remove border of list-group */
 .list-group-item {
