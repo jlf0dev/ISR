@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 
+
 /* General CSS */
 body {
 	font-family: 'Open Sans';
+	line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,6 +15,20 @@ button {
 	cursor: pointer;
 }
 
+.sec_wrap {
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.sec_wrap div {
+	text-align: center;
+}
+
+.sec_wrap h3 {
+	margin-bottom: 1rem;
+}
+
 
 /* Wrapper for nav and banner */
 .landing-wrapper {
@@ -20,6 +36,7 @@ button {
 	display: flex;
 	flex-direction: column;
 }
+
 
 /* Navbar */
 .navbar {
@@ -86,6 +103,29 @@ button {
 	width: 32px;
 }
 
+
+/* Under construction */
+#uc {
+	background-color: #5cb85c;
+	color: #fff;
+	text-align: justify;
+	padding: 1.5rem;
+}
+
+
+/* Content */
+#content {
+	margin-top: 1rem;
+}
+
+
+/* What are infrasignals */
+
+
+/* This is the infrasignal radio */
+#sec_2 div {
+	align-self: stretch;
+}
 
 /* Remove border of list-group */
 .list-group-item {
