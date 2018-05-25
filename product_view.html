@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Infrasignal</title>
+	<base href="/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="/js/script.js"></script>
+</head>
+
+<body>
+
+		<nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Infrasignal Radio</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="/product.html">Product</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="possible_uses.html">Possible Uses</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About Us</a>
+					</li>
+					<li class="nav-item">
+						<button id="contact" class="btn btn-outline-success">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+	<div id="content" class="container">
+
+        <div class="row sec_wrap align-items-stretch">
+            <div class="col-6">
+                <img src="/img/tracy-thomas-56810-unsplash.jpg" class="img-fluid"/>
+            </div>
+            <div class="col-6" style="text-align:start">
+                <h3>Infrasignal Radio</h3>
+                <h3 class="text-success">$130</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae metus turpis. Cras rutrum eleifend purus, nec auctor nulla laoreet nec. Nunc id urna euismod, venenatis tellus quis, sagittis massa.</p>
+                <a href="#" class="btn btn-success">Buy Now</a>
+            </div>
+        </div>
+
+	</div>
+
+	<footer class="bg-dark">
+		<div class="container text-white pt-4 pb-4">
+			<div class="row">
+				<div class="col-6">
+					<h4>Infrasignal Radio</h4>
+					<p>A family business dedicated to providing a refined product that we are proud of. We would love to hear from you with any comments, questions, or suggestions on how to improve.</p>
+					<p>information@infrasignal-radio.com</p>
+					<p>Infrasignal Radio, LLC<br />411 Walnut St. PMB 652<br />Green Cove Springs, FL 32043</p>
+				</div>
+				<div class="col-6">
+					<h4>Interested?</h4>
+					<p>If you would like to be notified when the Infrasignal Radio becomes available, enter you email address below. Your email address will be used for this purpose and this purpose ONLY.</p>
+					<form>
+						<div class="input-group">
+							<input type="text" id="email_input" class="form-control" placeholder="Email">
+							<span class="input-group-btn">
+								<button class="btn btn-success" id="subscribe" type="submit">Subscribe</button>
+							</span>
+						</div>
+						<div class="alert alert-success alert-dismissible fade show" id="subscription_success" style="display: none" role="alert">
+							<button type="button" class="close" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Thank you for your interest!</strong> we will notify you when Infrasignal Radio is available.
+						</div>
+						<div class="alert alert-danger alert-dismissible fade show" id="subscription_failure" style="display: none" role="alert">
+							<button type="button" class="close" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Uh Oh</strong> Something went wrong, please try again later.
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
