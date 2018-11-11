@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 
 
+
 /* General */
 body {
 	font-family: 'Open Sans';
@@ -19,7 +20,7 @@ button {
 
 /* Wrapper for nav and banner */
 .landing-wrapper {
-	height: 100vh;
+	height: calc(100vh - 40px);
 	display: flex;
 	flex-direction: column;
 }
@@ -71,6 +72,7 @@ button {
 	padding:0;
 	display: flex;
 	align-items: stretch;
+	position: relative;
 }
 
 .banner .container {
@@ -82,12 +84,13 @@ button {
 #title {
 	font-family: 'Montserrat';
 	color: #fff;
-	font-size: 68px;
+	font-size: 19px;
 	text-transform: uppercase;
 }
 
 .arrow-image {
 	width: 32px;
+	height: 32px;
 }
 
 
@@ -110,11 +113,19 @@ button {
 	margin-bottom: 1rem;
 }
 
+.sec_header {
+	margin-bottom: 1rem;
+}
+
 .cards {
 	display: flex;
 	align-items: stretch;
 	margin-top: .5rem;
 	margin-bottom: .5rem;
+}
+
+.card-img-top {
+	width: 100%;
 }
 
 
@@ -161,4 +172,25 @@ footer {
 	display: block;
 }
 
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+	#title {
+		font-size: 32px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	#title {
+		font-size: 64px;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { } 
