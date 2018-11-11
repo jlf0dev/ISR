@@ -3,7 +3,14 @@
 
 
 /* General */
+html {
+	height: 100%;
+	width: 100%;
+}
+
 body {
+	height: 100%;
+	width: 100%;
 	font-family: 'Open Sans';
 	line-height: 1.6;
 	padding-top: 40px;
@@ -64,7 +71,7 @@ button {
 /* Banner */
 .banner {
 	flex-grow:1;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-image: url('../img/kalen-emsley-98264_gradient.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
@@ -115,13 +122,6 @@ button {
 
 .sec_header {
 	margin-bottom: 1rem;
-}
-
-.cards {
-	display: flex;
-	align-items: stretch;
-	margin-top: .5rem;
-	margin-bottom: .5rem;
 }
 
 .card-img-top {
@@ -183,7 +183,11 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+@media (min-width: 768px) { 
+	.banner {
+		background-attachment: fixed;
+	}
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
@@ -194,3 +198,4 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { } 
+
