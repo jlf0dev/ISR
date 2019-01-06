@@ -1,4 +1,35 @@
 $( document ).ready(function() {
+    // Validation for contact us form
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+        if (form.checkValidity() === true) {
+            var name = $('#nameInput').val();
+            var email = $('#emailInput').val();
+            var msg = $('#messageTextArea').val();
+            $.ajax({
+                type: 'POST',
+                url: '../php/contact_us.php',
+                data: { 
+                    name: name,
+                    email: email,
+                    msg: msg
+                },
+                success: function(result) {
+
+                },
+                error: function(jqxhr, status, exception) {
+                alert('Exception:', exception);
+                }
+            });
+        }
+      }, false);
+    });
     // Contact us scroll button
     $('#contact').on('click', function(e) {
         $('html, body').animate({
@@ -23,44 +54,6 @@ $( document ).ready(function() {
         $(currentAttrValue).show().siblings().hide();
         //Change active tab to this one
         $(this).addClass('nd-active').siblings().removeClass('nd-active');
-    });
-    // Subscribe button
-    $('#subscribe').click(function(e) {
-        e.preventDefault();
-        var email = $('#email_input').val();
-        $.ajax({
-            type: 'POST',
-            url: '../php/contact_us.php',
-            data: { 
-                email: email
-            },
-            success: function(result) {
-                $('#subscription_success').show();
-                $('#email_input').val("");
-            },
-            error: function(result) {
-                $('#subscription_failure').show();
-                $('#email_input').val("");
-            }
-        });
-        var time = 10;
-        window.setInterval(timer, 1000);
-        function timer()
-        {
-            //update time
-            time -=1;
-            //hide the div if the time is 0
-            if(time == 0)        
-            {
-                $('#subscription_success').hide();
-                $('#subscription_failure').hide();
-            }
-        }
-    });
-    // Close Subscribe alerts
-    $('.close').click(function(e) {
-        $('#subscription_success').hide();
-        $('#subscription_failure').hide();
     });
 
 });
