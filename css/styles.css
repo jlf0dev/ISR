@@ -101,6 +101,26 @@ button {
 }
 
 
+/* Modal */
+.modal-contact .modal-content {
+	border-radius: 0;		
+	border: none;
+}
+
+.modal-contact .modal-header {
+	border: none;
+	padding-bottom: 10px;
+}
+
+.modal-contact .modal-body {
+	padding-top: 10px;
+}
+
+.modal-contact .modal-footer {
+	border: none;
+}
+
+
 /* Content */
 #content {
 	margin-top: 1rem;
