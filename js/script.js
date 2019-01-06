@@ -8,27 +8,29 @@ $( document ).ready(function() {
           event.stopPropagation();
         }
         form.classList.add('was-validated');
-        if (form.checkValidity() === true) {
-            var name = $('#nameInput').val();
-            var email = $('#emailInput').val();
-            var msg = $('#messageTextArea').val();
-            $.ajax({
-                type: 'POST',
-                url: '../php/contact_us.php',
-                data: { 
-                    name: name,
-                    email: email,
-                    msg: msg
-                },
-                success: function(result) {
-
-                },
-                error: function(jqxhr, status, exception) {
-                alert('Exception:', exception);
-                }
-            });
-        }
       }, false);
+    });
+    // Submit contact us form
+    $('#contactUsForm').on('submit', function(e) {
+        e.preventDefault();
+        var name = $('#nameInput').val();
+        var email = $('#emailInput').val();
+        var msg = $('#messageTextArea').val();
+        $.ajax({
+            type: 'POST',
+            url: '../php/contact_us.php',
+            data: { 
+                name: name,
+                email: email,
+                msg: msg
+            },
+            success: function(result) {
+                $('#modalContact').modal('hide');
+            },
+            error: function(exception) {
+                console.log(exception);
+            }
+        });
     });
     // Contact us scroll button
     $('#contact').on('click', function(e) {
