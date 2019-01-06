@@ -2,35 +2,37 @@ $( document ).ready(function() {
     // Validation for contact us form
     var forms = document.getElementsByClassName('needs-validation');
     var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('was-validated');
         }
-        form.classList.add('was-validated');
+        else {
+            event.preventDefault();
+            var name = $('#nameInput').val();
+            var email = $('#emailInput').val();
+            var msg = $('#messageTextArea').val();
+            $.ajax({
+                type: 'POST',
+                url: '../php/contact_us.php',
+                data: { 
+                    name: name,
+                    email: email,
+                    msg: msg
+                },
+                success: function(result) {
+                    $('#modalContact').modal('hide');
+                    $('#nameInput').val("");
+                    $('#emailInput').val("");
+                    $('#messageTextArea').val("");
+                },
+                error: function(exception) {
+                    console.log(exception);
+                }
+            });
+        }
       }, false);
-    });
-    // Submit contact us form
-    $('#contactUsForm').on('submit', function(e) {
-        e.preventDefault();
-        var name = $('#nameInput').val();
-        var email = $('#emailInput').val();
-        var msg = $('#messageTextArea').val();
-        $.ajax({
-            type: 'POST',
-            url: '../php/contact_us.php',
-            data: { 
-                name: name,
-                email: email,
-                msg: msg
-            },
-            success: function(result) {
-                $('#modalContact').modal('hide');
-            },
-            error: function(exception) {
-                console.log(exception);
-            }
-        });
     });
     // Contact us scroll button
     $('#contact').on('click', function(e) {
