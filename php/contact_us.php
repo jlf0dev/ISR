@@ -8,7 +8,11 @@ $mail->Host = 'localhost';
 
 $mail->From = "information@infrasignal-radio.com";
 $mail->FromName = "Infrasignal-Radio.com";
-$mail->AddAddress("jake.fink@infrasignal-radio.com");                  // name is optional
+$mail->AddAddress("jake.fink@infrasignal-radio.com");
+$mail->AddAddress("brian.fink@infrasignal-radio.com");
+$mail->AddAddress("aubrey.mcbroom@infrasignal-radio.com");
+$mail->AddAddress("jessica.fink@infrasignal-radio.com");
+$mail->AddAddress("linda.fink@infrasignal-radio.com");
 
 $mail->WordWrap = 50;                                 // set word wrap to 50 characters
 
