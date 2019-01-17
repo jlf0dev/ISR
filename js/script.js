@@ -1,5 +1,11 @@
 $( document ).ready(function() {
     // Validation for contact us form
+    window.verifyRecaptchaCallback = function (response) {
+        $('input[data-recaptcha]').val(response).trigger('change')
+    }
+    window.expiredRecaptchaCallback = function () {
+        $('input[data-recaptcha]').val("").trigger('change')
+    }
     var forms = document.getElementsByClassName('needs-validation');
     var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
@@ -7,6 +13,7 @@ $( document ).ready(function() {
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
+                grecaptcha.reset();
             }
             else {
                 event.preventDefault();
@@ -19,7 +26,8 @@ $( document ).ready(function() {
                     data: { 
                         name: name,
                         email: email,
-                        msg: msg
+                        msg: msg,
+                        captcha: grecaptcha.getResponse()
                     },
                     success: function(result) {
                         $('#modalContact').modal('hide');
@@ -27,6 +35,7 @@ $( document ).ready(function() {
                         $('#emailInput').val("");
                         $('#messageTextArea').val("");
                         form.classList.remove('was-validated');
+                        grecaptcha.reset();
                     },
                     error: function(exception) {
                         console.log(exception);
