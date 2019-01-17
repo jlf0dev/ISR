@@ -1,40 +1,40 @@
 $( document ).ready(function() {
     // Validation for contact us form
-    function submitContactUsForm() {
-        var forms = document.getElementsByClassName('needs-validation');
-        form.classList.add('was-validated');
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-            grecaptcha.reset();
-        }
-        else {
-            event.preventDefault();
-            var name = $('#nameInput').val();
-            var email = $('#emailInput').val();
-            var msg = $('#messageTextArea').val();
-            $.ajax({
-                type: 'POST',
-                url: '../php/contact_us.php',
-                data: { 
-                    name: name,
-                    email: email,
-                    msg: msg,
-                    captcha: grecaptcha.getResponse()
-                },
-                success: function(result) {
-                    $('#modalContact').modal('hide');
-                    $('#nameInput').val("");
-                    $('#emailInput').val("");
-                    $('#messageTextArea').val("");
-                    form.classList.remove('was-validated');
-                },
-                error: function(exception) {
-                    console.log(exception);
-                }
-            });
-        }
-    }
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            form.classList.add('was-validated');
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            else {
+                event.preventDefault();
+                var name = $('#nameInput').val();
+                var email = $('#emailInput').val();
+                var msg = $('#messageTextArea').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '../php/contact_us.php',
+                    data: { 
+                        name: name,
+                        email: email,
+                        msg: msg
+                    },
+                    success: function(result) {
+                        $('#modalContact').modal('hide');
+                        $('#nameInput').val("");
+                        $('#emailInput').val("");
+                        $('#messageTextArea').val("");
+                        form.classList.remove('was-validated');
+                    },
+                    error: function(exception) {
+                        console.log(exception);
+                    }
+                });
+            }
+        }, false);
+    });
     // Contact us scroll button
     $('#contact').on('click', function(e) {
         $('html, body').animate({
