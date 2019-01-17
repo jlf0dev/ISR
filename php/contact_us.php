@@ -6,11 +6,8 @@ $response=$_POST["captcha"];
 
 $verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
 $captcha_success=json_decode($verify);
+file_put_contents('debug.txt', $captcha_success, FILE_APPEND);
 if ($captcha_success->success==true) {
-   sendEmail();
-}
-
-function sendEmail(){
    $mail = new PHPMailer();
    $mail->isSMTP();
    $mail->Host = 'localhost';
@@ -22,15 +19,14 @@ function sendEmail(){
    $mail->AddAddress("aubrey.mcbroom@infrasignal-radio.com");
    $mail->AddAddress("jessica.fink@infrasignal-radio.com");
    $mail->AddAddress("linda.fink@infrasignal-radio.com");
-
-   $mail->WordWrap = 50;                                 // set word wrap to 50 characters
-
+   $mail->WordWrap = 50;
    $mail->Subject = "Someone is interested in Infrasignal Radio!";
-   $mail->Body = <<<EOT
-   Email: {$_POST['email']}
-   Name: {$_POST['name']}
-   Message: {$_POST['msg']}
-   EOT;
+   $mail->Body = 
+   <<<EOT
+      Email: {$_POST['email']}
+      Name: {$_POST['name']}
+      Message: {$_POST['msg']}
+EOT;
 
    if(!$mail->Send())
    {
@@ -40,6 +36,6 @@ function sendEmail(){
    }
 
    echo "Message has been sent";
-   }
+}
 
 ?>
