@@ -35,14 +35,6 @@ $( document ).ready(function() {
             });
         }
     }
-    var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-            
-            
-                
-            }
-        }, false);
-    });
     // Contact us scroll button
     $('#contact').on('click', function(e) {
         $('html, body').animate({
