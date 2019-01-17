@@ -6,8 +6,8 @@ $response=$_POST["captcha"];
 
 $verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
 $captcha_success=json_decode($verify);
-file_put_contents('debug.txt', $captcha_success, FILE_APPEND);
 if ($captcha_success->success==true) {
+   file_put_contents('debug.txt', 'captcha_success is true', FILE_APPEND);
    $mail = new PHPMailer();
    $mail->isSMTP();
    $mail->Host = 'localhost';
