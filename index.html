@@ -56,7 +56,14 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-success g-recaptcha" type="submit" data-sitekey="6Lc6booUAAAAABrk5c5NQLakH_9hG9chqO6mwhTp" data-callback="submitContactUsForm">Send</button>
+						<div class="form-group">
+							<div class="g-recaptcha" data-sitekey="6LdUbooUAAAAAGZxooiW3Xq1Eqn01BZA0hemq-JA" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+							<input class="form-control d-none" data-recaptcha="true" required>
+							<div class="invalid-feedback">
+								Please complete the Captcha
+							</div>
+						</div>
+						<button class="btn btn-success" type="submit">Send</button>
 					</div>
 				</form>
 			</div>
