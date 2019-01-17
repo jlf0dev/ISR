@@ -30,12 +30,9 @@ EOT;
    if(!$mail->Send())
    {
       file_put_contents('debug.txt', 'mail could not be sent', FILE_APPEND);
-      echo "Message could not be sent. <p>";
-      echo "Mailer Error: " . $mail->ErrorInfo;
       exit;
    }
 
-   file_put_contents('debug.txt', 'mail has been sent', FILE_APPEND);
 }
 
 ?>
