@@ -7,7 +7,6 @@ $response=$_POST["captcha"];
 $verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
 $captcha_success=json_decode($verify);
 if ($captcha_success->success==true) {
-   file_put_contents('debug.txt', 'captcha_success is true', FILE_APPEND);
    $mail = new PHPMailer();
    $mail->isSMTP();
    $mail->Host = 'localhost';
@@ -30,12 +29,13 @@ EOT;
 
    if(!$mail->Send())
    {
+      file_put_contents('debug.txt', 'mail could not be sent', FILE_APPEND);
       echo "Message could not be sent. <p>";
       echo "Mailer Error: " . $mail->ErrorInfo;
       exit;
    }
 
-   echo "Message has been sent";
+   file_put_contents('debug.txt', 'mail has been sent', FILE_APPEND);
 }
 
 ?>
